@@ -40,4 +40,14 @@ public class TemperatureConverter {
     public static float kelvinToCel(float kel){
         return (float) (kel - 273.15);
     }
+
+    /**
+     * Converts Kelvin to Fahrenheit.
+     *
+     * @param kel The temperature in Kelvin.
+     * @return The temperature in Fahrenheit.
+     */
+    public static double kelvinToFah(double kel){
+        return (kel - 273.15) * ((double) 9 / 5) + 32;
+    }
 }
