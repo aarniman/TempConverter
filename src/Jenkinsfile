@@ -1,3 +1,4 @@
+
 pipeline {
     agent any // IN THE LECTURE I WILL EXPLAIN THE SCRIPT AND THE WORKFLOW
     
@@ -32,18 +33,6 @@ pipeline {
                         docker.image("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}").push()
                     }
                 }
-            }
-        }
-        stage('Code Coverage') {
-            steps {
-                jacoco execPattern: '**/target/jacoco.exec'
-            }
-        }
-
-        post {
-            always {
-                junit '**/target/surefire-reports/*.xml'
-                jacoco execPattern: '**/target/jacoco.exec'
             }
         }
     }
