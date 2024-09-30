@@ -35,13 +35,11 @@ pipeline {
             }
         }
     }
-}
         stage('Code Coverage') {
             steps {
                 jacoco execPattern: '**/target/jacoco.exec'
             }
         }
-    }
 
     post {
         always {
